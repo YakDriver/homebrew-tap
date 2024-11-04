@@ -25,18 +25,22 @@ jobs:
       - name: Run update script
         run: ruby update_terraform-latest-beta.rb
 
+      - name: Read latest beta version
+        id: read_version
+        run: echo "LATEST_BETA_VERSION=$(cat terraform_latest_beta_version.txt)" >> $GITHUB_ENV
+
       - name: Commit and push changes
         run: |
           git config --global user.name 'yakdriverbot'
           git config --global user.email 'f1formula.juan@gmail.com'
-          git add terraform-latest-beta.rb
-          git commit -m 'Update Terraform beta formula to version ${latest_beta_version}'
+          git add Formula/terraform-latest-beta.rb
+          git commit -m "Update Terraform beta formula to version ${{ env.LATEST_BETA_VERSION }}"
           git push
 
       - name: Create Pull Request
         uses: peter-evans/create-pull-request@v3
         with:
-          commit-message: Update Terraform beta formula to version ${latest_beta_version}
+          commit-message: "Update Terraform beta formula to version ${{ env.LATEST_BETA_VERSION }}"
           branch: update-terraform-beta-formula
-          title: Update Terraform beta formula to version ${latest_beta_version}
-          body: This PR updates the Terraform beta formula to version ${latest_beta_version} with the latest sha256 hashes.
+          title: "Update Terraform beta formula to version ${{ env.LATEST_BETA_VERSION }}"
+          body: "This PR updates the Terraform beta formula to version ${{ env.LATEST_BETA_VERSION }} with the latest sha256 hashes."
