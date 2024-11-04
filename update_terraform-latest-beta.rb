@@ -30,6 +30,9 @@ if latest_beta_version.nil? || latest_beta_version.empty?
   exit 1
 end
 
+# Write the latest beta version to a file
+File.write('terraform_latest_beta_version.txt', latest_beta_version)
+
 # Define the URLs for each platform
 urls = {
   "darwin_amd64" => "https://releases.hashicorp.com/terraform/#{latest_beta_version}/terraform_#{latest_beta_version}_darwin_amd64.zip",
