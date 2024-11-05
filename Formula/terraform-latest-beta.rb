@@ -1,4 +1,4 @@
-class Terraform < Formula
+class TerraformLatestBeta < Formula
   desc "Terraform Latest Beta"
   homepage "https://www.terraform.io/"
   version "1.10.0-beta1"
