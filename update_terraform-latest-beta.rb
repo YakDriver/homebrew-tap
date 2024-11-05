@@ -64,7 +64,6 @@ formula.gsub!(/version "\d+\.\d+\.\d+-beta\d+"/, "version \"#{latest_beta_versio
 # Update the URLs and SHA256 hashes in the formula file
 urls.each do |platform, url|
   formula.gsub!(/url "https:\/\/releases.hashicorp.com\/terraform\/\d+\.\d+\.\d+-beta\d+\/terraform_\d+\.\d+\.\d+-beta\d+_#{platform}.zip"\n    sha256 "[a-f0-9]{64}"/, "url \"#{url}\"\n    sha256 \"#{sha256s[platform]}\"")
-  #formula.gsub!(/sha256 "[a-f0-9]{64}"/, "sha256 \"#{sha256s[platform]}\"")
 end
 
 # Write the updated formula back to the file
