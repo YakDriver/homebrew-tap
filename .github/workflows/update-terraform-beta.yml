@@ -36,15 +36,12 @@ jobs:
           git config --global user.name 'yakdriverbot'
           git config --global user.email 'f1formula.juan@gmail.com'
           git add Formula/terraform-latest-beta.rb
-          echo "Added Terraform beta formula for version ${{ env.LATEST_BETA_VERSION }}"
           git commit -m "Update Terraform beta formula to version ${{ env.LATEST_BETA_VERSION }}"
-          #echo "Committed changes, pushing to"
-          #git push https://$GH_PAT@github.com/YakDriver/homebrew-tap.git HEAD:main
-
 
       - name: Create Pull Request
         uses: peter-evans/create-pull-request@v3
         with:
+          token: ${{ secrets.GH_PAT }}
           commit-message: "Update Terraform beta formula to version ${{ env.LATEST_BETA_VERSION }}"
           branch: update-terraform-beta-formula
           title: "Update Terraform beta formula to version ${{ env.LATEST_BETA_VERSION }}"
