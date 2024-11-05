@@ -33,7 +33,7 @@ jobs:
         id: read_version
         run: echo "LATEST_BETA_VERSION=$(cat terraform_latest_beta_version.txt)" >> $GITHUB_ENV
 
-      - name: Commit and push changes
+      - name: Commit changes
         run: |
           git config --global user.name 'yakdriverbot'
           git config --global user.email 'f1formula.juan@gmail.com'
