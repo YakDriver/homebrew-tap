@@ -48,6 +48,7 @@ jobs:
           committer: yakdriverbot <f1formula.juan@gmail.com>
           author: yakdriverbot <f1formula.juan@gmail.com>
           commit-message: "Update Terraform beta formula to version ${{ env.LATEST_BETA_VERSION }}"
+          base: main
           branch: update-terraform-beta-formula
           title: "Update Terraform beta formula to version ${{ env.LATEST_BETA_VERSION }}"
           body: "This PR updates the Terraform beta formula to version ${{ env.LATEST_BETA_VERSION }} with the latest sha256 hashes."
