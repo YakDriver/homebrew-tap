@@ -27,19 +27,15 @@ jobs:
           gem install nokogiri
 
       - name: Run update script
-        run: ruby update_terraform-latest-beta.rb
+        run: |
+          ruby update_terraform-latest-beta.rb
+          ruby update_terraform.rb
 
       - name: Read latest beta version
         id: read_version
-        run: echo "LATEST_BETA_VERSION=$(cat terraform_latest_beta_version.txt)" >> $GITHUB_ENV
-
-      #- name: Commit changes
-      #  run: |
-      #    git config --global user.name 'yakdriverbot'
-      #    git config --global user.email 'f1formula.juan@gmail.com'
-      #    git checkout -b update-terraform-beta-formula
-      #    git add Formula/terraform-latest-beta.rb
-      #    git commit -m "Update Terraform beta formula to version ${{ env.LATEST_BETA_VERSION }}"
+        run: |
+          echo "LATEST_BETA_VERSION=$(cat terraform_latest_beta_version.txt)" >> $GITHUB_ENV
+          echo "LATEST_VERSION=$(cat terraform_latest_version.txt)" >> $GITHUB_ENV
 
       - name: Create Pull Request
         uses: peter-evans/create-pull-request@v3
@@ -47,8 +43,8 @@ jobs:
           token: ${{ secrets.GH_PAT }}
           committer: yakdriverbot <f1formula.juan@gmail.com>
           author: yakdriverbot <f1formula.juan@gmail.com>
-          commit-message: "Update Terraform beta formula to version ${{ env.LATEST_BETA_VERSION }}"
+          commit-message: "Update Terraform formulas to beta/stable versions ${{ env.LATEST_BETA_VERSION }}/${{ env.LATEST_VERSION }}"
           base: main
           branch: update-terraform-beta-formula
-          title: "Update Terraform beta formula to version ${{ env.LATEST_BETA_VERSION }}"
-          body: "This PR updates the Terraform beta formula to version ${{ env.LATEST_BETA_VERSION }} with the latest sha256 hashes."
+          title: "Update Terraform formulas to beta/stable versions ${{ env.LATEST_BETA_VERSION }}/${{ env.LATEST_VERSION }}"
+          body: "This PR updates the Terraform formulas to beta/stable versions ${{ env.LATEST_BETA_VERSION }}/${{ env.LATEST_VERSION }} with the latest sha256 hashes."
