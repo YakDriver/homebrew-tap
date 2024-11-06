@@ -1,0 +1,7 @@
+pull_request_rules:
+  - name: Automatic merge
+    description: Merge when PR passes all branch protection and from bot
+    conditions:
+      - author = yakdriverbot
+    actions:
+      merge:
