@@ -1,0 +1,64 @@
+name: Test Formulae Update
+
+on:
+  pull_request:
+    types: [opened, synchronize, reopened]
+
+jobs:
+  test-formulae:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Set up Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: '3.3' # Specify the Ruby version you need
+
+      - name: Install dependencies
+        run: |
+          gem install nokogiri
+          gem install rubocop
+          gem install bundler-audit
+          bundle install
+
+      - name: Run RuboCop
+        run: |
+          rubocop
+
+      - name: Run Bundler Audit
+        run: |
+          bundle exec bundler-audit check --update
+
+      - name: Run update script
+        run: |
+          ruby update_terraform-latest-beta.rb
+          ruby update_terraform-latest-alpha.rb
+          ruby update_terraform.rb
+
+      - name: Env versions
+        id: env_version
+        run: |
+          echo "LATEST_ALPHA_VERSION=$(cat terraform_latest_alpha_version.txt)" >> $GITHUB_ENV  
+          echo "LATEST_BETA_VERSION=$(cat terraform_latest_beta_version.txt)" >> $GITHUB_ENV
+          echo "LATEST_VERSION=$(cat terraform_latest_version.txt)" >> $GITHUB_ENV
+
+      - name: Verify environment variables
+        run: |
+          errors=""
+          if [ -z "${{ env.LATEST_ALPHA_VERSION }}" ]; then
+            errors="LATEST_ALPHA_VERSION is empty"
+          fi
+          if [ -z "${{ env.LATEST_BETA_VERSION }}" ]; then
+            errors="${errors}\nLATEST_BETA_VERSION is empty"
+          fi
+          if [ -z "${{ env.LATEST_VERSION }}" ]; then
+            errors="${errors}\nLATEST_VERSION is empty"
+          fi
+          if [ -n "$errors" ]; then
+            echo -e "$errors"
+            exit 1
+          fi
+          echo "All environment variables are set"
