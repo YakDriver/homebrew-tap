@@ -6,7 +6,7 @@ Eases installing using [Homebrew](https://brew.sh). For example:
 
 ```sh
 brew install YakDriver/tap/terraform
-brew install YakDriver/tap/terraform-latest-beta
-brew install YakDriver/tap/terraform-latest-alpha
+brew install YakDriver/tap/terraform_latest_beta
+brew install YakDriver/tap/terraform_latest_alpha
 brew install YakDriver/tap/tfproviderdocs
 ```
