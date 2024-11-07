@@ -28,7 +28,7 @@ end
 
 # Find the latest alpha version using Gem::Version for correct comparison
 ver = versions.map { |v| v.match(/terraform_(\d+\.\d+\.\d+-alpha\d+)$/)[1] }.max_by { |v| Gem::Version.new(v) }
-ver = 'terraform_1.10.0-alpha20241023'
+
 # Check if ver is empty and quit if it is
 if ver.nil? || ver.empty?
   puts 'No alpha version found. Exiting.'
