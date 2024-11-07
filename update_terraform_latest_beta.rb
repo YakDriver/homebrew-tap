@@ -10,33 +10,33 @@ require 'rubygems' # Required for Gem::Version
 rurl = 'https://releases.hashicorp.com/terraform/'
 
 # Define the formula file
-formula_file = 'Formula/terraform.rb'
+formula_file = 'Formula/terraform_latest_beta.rb'
 
 # Fetch the latest version information from HashiCorp releases page
 uri = URI(rurl)
 response = Net::HTTP.get(uri)
 page = Nokogiri::HTML(response)
 
-# Extract and print all versions
-versions = page.css('a').map(&:text).grep(/^terraform_\d+\.\d+\.\d+$/)
+# Extract and print all beta versions
+versions = page.css('a').map(&:text).grep(/^terraform_\d+\.\d+\.\d+-beta\d+$/)
 
-# Print each version found
-puts 'Found stable versions:'
+# Print each beta version found
+puts 'Found beta versions:'
 versions.each do |version|
   puts version
 end
 
-# Find the latest version using Gem::Version for correct comparison
-ver = versions.map { |v| v.match(/terraform_(\d+\.\d+\.\d+)$/)[1] }.max_by { |v| Gem::Version.new(v) }
+# Find the latest beta version using Gem::Version for correct comparison
+ver = versions.map { |v| v.match(/terraform_(\d+\.\d+\.\d+-beta\d+)$/)[1] }.max_by { |v| Gem::Version.new(v) }
 
 # Check if ver is empty and quit if it is
 if ver.nil? || ver.empty?
-  puts 'No version found. Exiting.'
+  puts 'No beta version found. Exiting.'
   exit 1
 end
 
-# Write the latest version to a file
-File.write('terraform_latest_version.txt', ver)
+# Write the latest beta version to a file
+File.write('terraform_latest_beta_version.txt', ver)
 
 # Define the URLs for each platform
 urls = {
@@ -64,12 +64,12 @@ end
 formula = File.read(formula_file)
 
 # Update the version number in the formula file
-formula.gsub!(/version '\d+\.\d+\.\d+'/, "version '#{ver}'")
+formula.gsub!(/version '\d+\.\d+\.\d+-beta\d+'/, "version '#{ver}'")
 
 # Update the URLs and SHA256 hashes in the formula file
 urls.each do |platform, url|
   formula.gsub!(
-    %r{url '#{rurl}\d+\.\d+\.\d+/terraform_\d+\.\d+\.\d+_#{platform}.zip'\n    sha256 '[a-f0-9]{64}'},
+    %r{url '#{rurl}\d+\.\d+\.\d+-beta\d+/terraform_\d+\.\d+\.\d+-beta\d+_#{platform}.zip'\n    sha256 '[a-f0-9]{64}'},
     "url '#{url}'\n    sha256 '#{sha256s[platform]}'"
   )
 end
