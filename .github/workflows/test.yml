@@ -36,6 +36,7 @@ jobs:
           git config --global user.email 'f1formula.juan@gmail.com'
           git add .
           git commit -m "Apply RuboCop auto-correct fixes"
+          echo "Pushing changes to ${{ github.head_ref }}"
           git push https://$GH_PAT@github.com/YakDriver/homebrew-tap.git HEAD:${{ github.head_ref }}
 
       - name: RuboCop check
