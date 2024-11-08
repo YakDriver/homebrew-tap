@@ -42,6 +42,7 @@ jobs:
           git commit -m "Apply RuboCop auto-correct fixes"
           echo "Pushing changes to ${{ github.head_ref }}"
           git remote set-url origin https://$GH_PAT@github.com/YakDriver/homebrew-tap.git
+          git rebase origin/main
           git push origin HEAD:${{ github.head_ref }}
 
       - name: RuboCop check
