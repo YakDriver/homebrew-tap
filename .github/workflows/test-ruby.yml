@@ -36,27 +36,14 @@ jobs:
         run: |
           ruby update.rb
 
-      - name: Env versions
-        id: env_version
-        run: |
-          echo "LATEST_ALPHA_VERSION=$(cat latest_versions/terraform_alpha.txt)" >> $GITHUB_ENV  
-          echo "LATEST_BETA_VERSION=$(cat latest_versions/terraform_beta.txt)" >> $GITHUB_ENV
-          echo "LATEST_VERSION=$(cat latest_versions/terraform.txt)" >> $GITHUB_ENV
+      - name: Read update summary
+        id: read_summary
+        run: echo "UPDATE_SUMMARY=$(cat update_summary.txt)" >> $GITHUB_ENV
 
-      - name: Verify environment variables
+      - name: Verify update summary
         run: |
-          errors=""
-          if [ -z "${{ env.LATEST_ALPHA_VERSION }}" ]; then
-            errors="LATEST_ALPHA_VERSION is empty"
-          fi
-          if [ -z "${{ env.LATEST_BETA_VERSION }}" ]; then
-            errors="${errors}\nLATEST_BETA_VERSION is empty"
-          fi
-          if [ -z "${{ env.LATEST_VERSION }}" ]; then
-            errors="${errors}\nLATEST_VERSION is empty"
-          fi
-          if [ -n "$errors" ]; then
-            echo -e "$errors"
+          if [ ! -s update_summary.txt ]; then
+            echo "Update summary is empty"
             exit 1
           fi
-          echo "All environment variables are set"
+          echo "Update summary is set"
