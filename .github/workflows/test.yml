@@ -37,7 +37,8 @@ jobs:
           git add .
           git commit -m "Apply RuboCop auto-correct fixes"
           echo "Pushing changes to ${{ github.head_ref }}"
-          git push https://$GH_PAT@github.com/YakDriver/homebrew-tap.git HEAD:${{ github.head_ref }}
+          git push https://$GH_PAT@github.com/YakDriver/homebrew-tap.git
+          #git push https://$GH_PAT@github.com/YakDriver/homebrew-tap.git HEAD:${{ github.head_ref }}
 
       - name: RuboCop check
         run: |
