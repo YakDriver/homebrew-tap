@@ -38,6 +38,7 @@ jobs:
         run: |
           git config --global user.name 'yakdriverbot'
           git config --global user.email 'f1formula.juan@gmail.com'
+          git config --global pull.rebase false
           git add .
           git commit -m "Apply RuboCop auto-correct fixes"
           echo "Pushing changes to ${{ github.head_ref }}"
