@@ -2,7 +2,7 @@ name: Update Formulas
 
 on:
   schedule:
-    - cron: '0 5,17 * * *' # Runs daily at midnight
+    - cron: '0 5,17 * * *'
   workflow_dispatch: # Allows manual triggering of the workflow
 
 permissions:
@@ -20,7 +20,7 @@ jobs:
       - name: Set up Ruby
         uses: ruby/setup-ruby@v1
         with:
-          ruby-version: '3.1' # Specify the Ruby version you need
+          ruby-version: '3.1'
 
       - name: Install dependencies
         run: |
