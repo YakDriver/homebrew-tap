@@ -88,9 +88,6 @@ def update_formula(prod_id, formula_file, ver_re, version_file)
     exit 1
   end
 
-  # Write the latest version to a file
-  File.write("latest_versions/#{version_file}", latest)
-
   write_formula_file(prod_id, formula_file, ver_re, latest)
   puts "Updated #{formula_file} with new version #{latest} and sha256 hashes"
 end
