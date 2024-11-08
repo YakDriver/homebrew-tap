@@ -1,7 +1,8 @@
 # frozen_string_literal: true
 
 # Terraform Language Server is a tool that provides IDE features for Terraform configurations.
-# It offers features like auto-completion, go-to-definition, and documentation on hover to improve the Terraform development experience.
+# It offers features like auto-completion, go-to-definition, and documentation on hover to improve the Terraform
+# development experience.
 # This formula installs the latest stable version of the Terraform Language Server CLI tool.
 class TerraformLs < Formula
   desc 'Terraform Language Server'
