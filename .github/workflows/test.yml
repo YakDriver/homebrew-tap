@@ -28,6 +28,16 @@ jobs:
           gem install bundler-audit
           bundle install
 
+      - name: Configure Git
+        env:
+          GH_PAT: ${{ secrets.GH_PAT }}
+        run: |
+          git config --global user.name 'yakdriverbot'
+          git config --global user.email 'f1formula.juan@gmail.com'
+          git config --global pull.rebase true
+          git remote set-url origin https://$GH_PAT@github.com/YakDriver/homebrew-tap.git
+          git pull origin ${{ github.head_ref }}
+
       - name: RuboCop Auto-correct
         run: |
           rubocop --auto-correct
@@ -36,14 +46,10 @@ jobs:
         env:
           GH_PAT: ${{ secrets.GH_PAT }}
         run: |
-          git config --global user.name 'yakdriverbot'
-          git config --global user.email 'f1formula.juan@gmail.com'
-          git config --global pull.rebase false
           git add .
           git commit -m "Apply RuboCop auto-correct fixes"
           echo "Pushing changes to ${{ github.head_ref }}"
           git remote set-url origin https://$GH_PAT@github.com/YakDriver/homebrew-tap.git
-          git pull origin ${{ github.head_ref }}
           git push origin HEAD:${{ github.head_ref }}
 
       - name: RuboCop check
