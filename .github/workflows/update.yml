@@ -38,7 +38,7 @@ jobs:
           echo "EOF" >> $GITHUB_ENV
 
       - name: Create Pull Request
-        uses: peter-evans/create-pull-request@v3
+        uses: peter-evans/create-pull-request@v7
         with:
           token: ${{ secrets.GH_PAT }}
           committer: yakdriverbot <f1formula.juan@gmail.com>
