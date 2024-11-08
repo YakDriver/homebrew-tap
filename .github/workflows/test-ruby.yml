@@ -38,7 +38,10 @@ jobs:
 
       - name: Read update summary
         id: read_summary
-        run: echo "UPDATE_SUMMARY=$(cat update_summary.txt)" >> $GITHUB_ENV
+        run: |
+          echo "UPDATE_SUMMARY<<EOF" >> $GITHUB_ENV
+          cat update_summary.txt >> $GITHUB_ENV
+          echo "EOF" >> $GITHUB_ENV
 
       - name: Verify update summary
         run: |
