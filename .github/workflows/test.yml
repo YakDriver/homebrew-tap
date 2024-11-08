@@ -1,0 +1,52 @@
+name: Test Formulae Update
+
+on:
+  pull_request:
+    types: [opened, synchronize, reopened]
+
+jobs:
+  test-formulae:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Set up Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: '3.3' # Specify the Ruby version you need
+
+      - name: Install dependencies
+        run: |
+          gem install nokogiri
+          gem install rubocop
+          gem install bundler-audit
+          bundle install
+
+      - name: Run RuboCop
+        run: |
+          rubocop
+
+      - name: Run Bundler Audit
+        run: |
+          bundle exec bundler-audit check --update
+
+      - name: Run update script
+        run: |
+          ruby update.rb
+
+      - name: Read update summary
+        id: read_summary
+        run: |
+          echo "UPDATE_SUMMARY<<EOF" >> $GITHUB_ENV
+          cat update_summary.txt >> $GITHUB_ENV
+          echo "EOF" >> $GITHUB_ENV
+
+      - name: Verify update summary
+        run: |
+          if [ ! -s update_summary.txt ]; then
+            echo "Update summary is empty"
+            exit 1
+          fi
+          echo "Update summary is set"
