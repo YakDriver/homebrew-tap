@@ -34,16 +34,14 @@ jobs:
 
       - name: Run update script
         run: |
-          ruby update_terraform_latest_beta.rb
-          ruby update_terraform_latest_alpha.rb
-          ruby update_terraform.rb
+          ruby update.rb
 
       - name: Env versions
         id: env_version
         run: |
-          echo "LATEST_ALPHA_VERSION=$(cat terraform_latest_alpha_version.txt)" >> $GITHUB_ENV  
-          echo "LATEST_BETA_VERSION=$(cat terraform_latest_beta_version.txt)" >> $GITHUB_ENV
-          echo "LATEST_VERSION=$(cat terraform_latest_version.txt)" >> $GITHUB_ENV
+          echo "LATEST_ALPHA_VERSION=$(cat latest_versions/terraform_alpha.txt)" >> $GITHUB_ENV  
+          echo "LATEST_BETA_VERSION=$(cat latest_versions/terraform_beta.txt)" >> $GITHUB_ENV
+          echo "LATEST_VERSION=$(cat latest_versions/terraform.txt)" >> $GITHUB_ENV
 
       - name: Verify environment variables
         run: |

@@ -3,7 +3,7 @@
 # Terraform is a tool for building, changing, and versioning infrastructure safely and efficiently.
 # It can manage existing and popular service providers as well as custom in-house solutions.
 # This formula installs the latest beta version of the Terraform CLI tool.
-class TerraformLatestBeta < Formula
+class TerraformBeta < Formula
   desc 'Terraform Latest Beta'
   homepage 'https://www.terraform.io/'
   version '1.10.0-beta1'
