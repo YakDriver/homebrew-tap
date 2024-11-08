@@ -29,12 +29,14 @@ jobs:
           rubocop --auto-correct
 
       - name: Commit RuboCop fixes
+        env:
+          GH_PAT: ${{ secrets.GH_PAT }}
         run: |
           git config --global user.name 'yakdriverbot'
           git config --global user.email 'f1formula.juan@gmail.com'
           git add .
           git commit -m "Apply RuboCop auto-correct fixes"
-          git push https://${{ secrets.GH_PAT }}@github.com/YakDriver/homebrew-tap.git HEAD:${{ github.head_ref }}
+          git push https://$GH_PAT@github.com/YakDriver/homebrew-tap.git HEAD:${{ github.head_ref }}
 
       - name: RuboCop check
         run: |
