@@ -33,3 +33,25 @@ brew install YakDriver/tap/tfstacks
 brew install YakDriver/tap/vault
 brew install YakDriver/tap/waypoint
 ```
+
+### Current Versions
+
+| Tap | Version |
+| --- | --- |
+| boundary | 0.18.0 |
+| consul | 1.20.1 |
+| consul_aws | 0.1.3 |
+| nomad | 1.9.2 |
+| packer | 1.11.2 |
+| packer_alpha | 1.12.0-alpha1 |
+| packer_beta | 1.11.0-beta |
+| sentinel | 0.28.0 |
+| terraform | 1.9.8 |
+| terraform_alpha | 1.11.0-alpha20241106 |
+| terraform_beta | 1.10.0-beta1 |
+| tf_migrate_alpha | 0.0.2-alpha |
+| tf_migrate_beta | 0.0.2-beta |
+| tfproviderdocs | 0.16.5 |
+| tfstacks | 0.5.1 |
+| vault | 1.18.1 |
+| waypoint | 0.11.4 |
