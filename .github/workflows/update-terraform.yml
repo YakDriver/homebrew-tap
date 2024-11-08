@@ -20,7 +20,7 @@ jobs:
       - name: Set up Ruby
         uses: ruby/setup-ruby@v1
         with:
-          ruby-version: '3.3' # Specify the Ruby version you need
+          ruby-version: '3.1' # Specify the Ruby version you need
 
       - name: Install dependencies
         run: |
@@ -30,12 +30,9 @@ jobs:
         run: |
           ruby update.rb
 
-      - name: Env versions
-        id: env_version
-        run: |
-          echo "LATEST_ALPHA_VERSION=$(cat latest_versions/terraform_alpha.txt)" >> $GITHUB_ENV  
-          echo "LATEST_BETA_VERSION=$(cat latest_versions/terraform_beta.txt)" >> $GITHUB_ENV
-          echo "LATEST_VERSION=$(cat latest_versions/terraform.txt)" >> $GITHUB_ENV
+      - name: Read update summary
+        id: read_summary
+        run: echo "UPDATE_SUMMARY=$(cat update_summary.txt)" >> $GITHUB_ENV
 
       - name: Create Pull Request
         uses: peter-evans/create-pull-request@v3
@@ -43,8 +40,11 @@ jobs:
           token: ${{ secrets.GH_PAT }}
           committer: yakdriverbot <f1formula.juan@gmail.com>
           author: yakdriverbot <f1formula.juan@gmail.com>
-          commit-message: "Update Terraform formulas to alpha/beta/stable versions ${{ env.LATEST_ALPHA_VERSION }}/${{ env.LATEST_BETA_VERSION }}/${{ env.LATEST_VERSION }}"
+          commit-message: "Update Terraform formulas"
           base: main
           branch: update-terraform-formulas
-          title: "Update Terraform formulas to alpha/beta/stable versions ${{ env.LATEST_ALPHA_VERSION }}/${{ env.LATEST_BETA_VERSION }}/${{ env.LATEST_VERSION }}"
-          body: "This PR updates the Terraform formulas to alpha/beta/stable versions ${{ env.LATEST_ALPHA_VERSION }}/${{ env.LATEST_BETA_VERSION }}/${{ env.LATEST_VERSION }} with the latest sha256 hashes."
+          title: "Update Terraform formulas"
+          body: |
+            This PR updates the following Terraform formulas with the latest versions and sha256 hashes:
+
+            ${{ env.UPDATE_SUMMARY }}

@@ -1,0 +1,16 @@
+boundary.rb: 0.18.0
+consul_aws.rb: 0.1.3
+consul.rb: 1.20.1
+nomad.rb: 1.9.2
+packer_alpha.rb: 1.12.0-alpha1
+packer_beta.rb: 1.11.0-beta
+packer.rb: 1.11.2
+sentinel.rb: 0.28.0
+terraform_alpha.rb: 1.11.0-alpha20241106
+terraform_beta.rb: 1.10.0-beta1
+terraform.rb: 1.9.8
+tf_migrate_alpha.rb: 0.0.2-alpha
+tf_migrate_beta.rb: 0.0.2-beta
+tfstacks.rb: 0.5.1
+vault.rb: 1.18.1
+waypoint.rb: 0.11.4

@@ -72,6 +72,10 @@ def write_formula_file(prod_id, formula_file, ver_re, latest)
   formula.gsub!(/version '#{ver_re}'/, "version '#{latest}'")
   formula_url_replacements(formula, urls, sha256s, prod_id, ver_re)
   File.write("Formula/#{formula_file}", formula)
+
+  File.open('update_summary.txt', 'a') do |f|
+    f.puts "#{formula_file}: #{latest}\n"
+  end
 end
 
 def update_formula(prod_id, formula_file, ver_re, version_file)
@@ -90,6 +94,8 @@ def update_formula(prod_id, formula_file, ver_re, version_file)
   write_formula_file(prod_id, formula_file, ver_re, latest)
   puts "Updated #{formula_file} with new version #{latest} and sha256 hashes"
 end
+
+File.write('update_summary.txt', '')
 
 # Call the function for each formula file
 update_formula('boundary', 'boundary.rb', '(\d+\.\d+\.\d+)', 'boundary.txt')
