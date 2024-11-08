@@ -78,7 +78,7 @@ def write_formula_file(prod_id, formula_file, ver_re, latest)
   end
 end
 
-def update_formula(prod_id, formula_file, ver_re, version_file)
+def update_formula(prod_id, formula_file, ver_re, _version_file)
   # Find the latest version using Gem::Version for correct comparison
   latest = latest_version(prod_id, ver_re)
 
