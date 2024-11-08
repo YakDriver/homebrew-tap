@@ -1,4 +1,4 @@
-name: Update Terraform Formulas
+name: Update Formulas
 
 on:
   schedule:
@@ -43,11 +43,11 @@ jobs:
           token: ${{ secrets.GH_PAT }}
           committer: yakdriverbot <f1formula.juan@gmail.com>
           author: yakdriverbot <f1formula.juan@gmail.com>
-          commit-message: "Update Terraform formulas"
+          commit-message: "Update formulas"
           base: main
-          branch: update-terraform-formulas
-          title: "Update Terraform formulas"
+          branch: update-formulas
+          title: "Update formulas"
           body: |
-            This PR updates the following Terraform formulas with the latest versions and sha256 hashes:
+            This PR updates the following formulas with the latest versions and sha256 hashes:
 
             ${{ env.UPDATE_SUMMARY }}
