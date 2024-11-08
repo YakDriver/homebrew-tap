@@ -40,17 +40,18 @@ jobs:
 
       - name: RuboCop Auto-correct
         run: |
-          rubocop --auto-correct
+          rubocop --autocorrect
 
       - name: Commit RuboCop fixes
-        env:
-          GH_PAT: ${{ secrets.GH_PAT }}
         run: |
-          git add .
-          git commit -m "Apply RuboCop auto-correct fixes"
-          echo "Pushing changes to ${{ github.head_ref }}"
-          git remote set-url origin https://$GH_PAT@github.com/YakDriver/homebrew-tap.git
-          git push origin HEAD:${{ github.head_ref }}
+          if [ -n "$(git status --porcelain)" ]; then
+            git add .
+            git commit -m "Apply RuboCop auto-correct fixes"
+            echo "Pushing changes to ${{ github.head_ref }}"
+            git push origin HEAD:${{ github.head_ref }}
+          else
+            echo "No changes to commit"
+          fi
 
       - name: RuboCop check
         run: |
