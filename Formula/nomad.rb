@@ -25,7 +25,7 @@ class Nomad < Formula
 
   if OS.linux? && Hardware::CPU.arm? && !Hardware::CPU.is_64_bit?
     url 'https://releases.hashicorp.com/nomad/1.9.3/nomad_1.9.3_linux_arm.zip'
-    sha256 '6ce27b3721483527d6490d50db9d742887a2499574063d2c45ee050d39e1c9d7'
+    sha256 '0436c87e38ef6c8eca7157c21ead51e5a6e252e694df242fce2fa9e0c3c06b67'
   end
 
   if OS.linux? && Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
