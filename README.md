@@ -26,6 +26,7 @@ brew install YakDriver/tap/sentinel
 brew install YakDriver/tap/terraform
 brew install YakDriver/tap/terraform_alpha
 brew install YakDriver/tap/terraform_beta
+brew install YakDriver/tap/terraform_rc
 brew install YakDriver/tap/tf_migrate_alpha
 brew install YakDriver/tap/tf_migrate_beta
 brew install YakDriver/tap/tfproviderdocs
