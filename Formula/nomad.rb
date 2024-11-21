@@ -23,11 +23,6 @@ class Nomad < Formula
     sha256 '517bce4fcebdc71335ac33a1e34a4c262d2417d8ed4e60cf895fc59e69d70c84'
   end
 
-  if OS.linux? && Hardware::CPU.arm? && !Hardware::CPU.is_64_bit?
-    url 'https://releases.hashicorp.com/nomad/1.9.3/nomad_1.9.3_linux_arm.zip'
-    sha256 '34769fb43647a09c9f0f02f87cf4a4a22c7d50556100db7ecfb99a3954855f9b'
-  end
-
   if OS.linux? && Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
     url 'https://releases.hashicorp.com/nomad/1.9.3/nomad_1.9.3_linux_arm64.zip'
     sha256 'bd5dd97272c6b4bfeedb2a48c21ae45b2e396c089525003e4e2c8f4b04945da5'
