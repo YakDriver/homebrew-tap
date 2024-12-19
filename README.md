@@ -42,7 +42,7 @@ brew install YakDriver/tap/waypoint
 | boundary | 0.18.2 |
 | consul | 1.20.1 |
 | consul_aws | 0.1.3 |
-| nomad | 1.9.3 |
+| nomad | 1.9.4 |
 | packer | 1.11.2 |
 | packer_alpha | 1.12.0-alpha1 |
 | packer_beta | 1.11.0-beta |
@@ -55,5 +55,5 @@ brew install YakDriver/tap/waypoint
 | tf_migrate_beta | 0.0.2-beta |
 | tfproviderdocs | 0.16.6 |
 | tfstacks | 0.6.0 |
-| vault | 1.18.2 |
+| vault | 1.18.3 |
 | waypoint | 0.11.4 |
