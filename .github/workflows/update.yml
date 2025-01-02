@@ -2,7 +2,7 @@ name: Update Formulas
 
 on:
   schedule:
-    - cron: '0 5,17 * * *'
+    - cron: '0 4,16 * * *'
   workflow_dispatch: # Allows manual triggering of the workflow
 
 permissions:
