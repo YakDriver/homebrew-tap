@@ -7,7 +7,7 @@ packer_beta: 1.11.0-beta
 packer: 1.11.2
 sentinel: 0.29.0
 terraform_alpha: 1.11.0-alpha20250107
-terraform_beta: 1.10.0-beta1
+terraform_beta: 1.11.0-beta1
 terraform_rc: 1.10.0-rc3
 terraform: 1.10.4
 tf_migrate_alpha: 0.0.2-alpha
