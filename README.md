@@ -40,7 +40,7 @@ brew install YakDriver/tap/waypoint
 | Tap | Version |
 | --- | --- |
 | boundary | 0.19.0 |
-| consul | 1.20.3 |
+| consul | 1.20.4 |
 | consul_aws | 0.1.3 |
 | nomad | 1.9.6 |
 | packer | 1.12.0 |
@@ -50,7 +50,7 @@ brew install YakDriver/tap/waypoint
 | terraform | 1.10.5 |
 | terraform_alpha | 1.12.0-alpha20250213 |
 | terraform_beta | 1.11.0-beta2 |
-| terraform_rc | 1.11.0-rc2 |
+| terraform_rc | 1.11.0-rc3 |
 | tf_migrate_alpha | 0.0.2-alpha |
 | tf_migrate_beta | 0.0.2-beta |
 | tfproviderdocs | 0.17.0 |
