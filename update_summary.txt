@@ -9,7 +9,7 @@ sentinel: 0.30.0
 terraform_alpha: 1.12.0-alpha20250213
 terraform_beta: 1.11.0-beta2
 terraform_rc: 1.11.0-rc3
-terraform: 1.11.0
+terraform: 1.11.1
 tf_migrate_alpha: 1.0.0-alpha20250227
 tf_migrate_beta: 0.0.2-beta
 tfstacks: 0.6.1
