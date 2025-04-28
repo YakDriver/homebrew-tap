@@ -6,31 +6,31 @@
 class TerraformBeta < Formula
   desc 'Terraform Latest Beta'
   homepage 'https://www.terraform.io/'
-  version '1.11.0-beta2'
+  version '1.12.0-beta3'
 
   if OS.mac? && Hardware::CPU.intel?
-    url 'https://releases.hashicorp.com/terraform/1.11.0-beta2/terraform_1.11.0-beta2_darwin_amd64.zip'
-    sha256 'a556a301ca5d4274bc5ee4ca7dfb6497f93014dbdde3b893dcb805028628157a'
+    url 'https://releases.hashicorp.com/terraform/1.12.0-beta3/terraform_1.12.0-beta3_darwin_amd64.zip'
+    sha256 'f484a640fc20561e0072309d0b461c17e07c9042e0bf361fa1cd13c9978d697c'
   end
 
   if OS.mac? && Hardware::CPU.arm?
-    url 'https://releases.hashicorp.com/terraform/1.11.0-beta2/terraform_1.11.0-beta2_darwin_arm64.zip'
-    sha256 'b5f453603488e3559f33100520a0f7c1f3321a4957c6ed62c79cb4c5092c5497'
+    url 'https://releases.hashicorp.com/terraform/1.12.0-beta3/terraform_1.12.0-beta3_darwin_arm64.zip'
+    sha256 '32748b104a4ba1b510bf16eb6ab75fdbe6a7cf6453d49672d41a3e2596247678'
   end
 
   if OS.linux? && Hardware::CPU.intel?
-    url 'https://releases.hashicorp.com/terraform/1.11.0-beta2/terraform_1.11.0-beta2_linux_amd64.zip'
-    sha256 'e7a36e6df6767c7742f8e847768a5b37a1893c8618e41b773e8cb1a4a3984a70'
+    url 'https://releases.hashicorp.com/terraform/1.12.0-beta3/terraform_1.12.0-beta3_linux_amd64.zip'
+    sha256 'f040fb4d80889ccca5623a20aed8c8fed8ec4316e20b8361aaf9e9b8d6d657e0'
   end
 
   if OS.linux? && Hardware::CPU.arm? && !Hardware::CPU.is_64_bit?
-    url 'https://releases.hashicorp.com/terraform/1.11.0-beta2/terraform_1.11.0-beta2_linux_arm.zip'
-    sha256 'cf22ac6f77b5482effa8b8cae3886c41aa39936de0a1b7508e00143861143de0'
+    url 'https://releases.hashicorp.com/terraform/1.12.0-beta3/terraform_1.12.0-beta3_linux_arm.zip'
+    sha256 '43e232eb818cbf4d193ba01560671ae83073ab474d6bf65073c0d2a53d03ea7a'
   end
 
   if OS.linux? && Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-    url 'https://releases.hashicorp.com/terraform/1.11.0-beta2/terraform_1.11.0-beta2_linux_arm64.zip'
-    sha256 'b1524fc6cc31f7c6ffee634f2ad03d5d224ddf542ae049510a20e242f9ce2a58'
+    url 'https://releases.hashicorp.com/terraform/1.12.0-beta3/terraform_1.12.0-beta3_linux_arm64.zip'
+    sha256 '1acfd21e19843c4069345e0d48c7daf3665ac03ab10ac26a33d75fd4b570013d'
   end
 
   conflicts_with 'terraform'
