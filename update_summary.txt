@@ -1,6 +1,6 @@
 boundary: 0.19.1
 consul_aws: 0.1.3
-consul: 1.20.6
+consul: 1.21.0
 nomad: 1.10.0
 packer_alpha: 1.12.0-alpha1
 packer_beta: 1.11.0-beta
