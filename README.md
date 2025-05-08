@@ -50,7 +50,7 @@ brew install YakDriver/tap/waypoint
 | terraform | 1.11.4 |
 | terraform_alpha | 1.12.0-alpha20250319 |
 | terraform_beta | 1.12.0-beta3 |
-| terraform_rc | 1.12.0-rc1 |
+| terraform_rc | 1.12.0-rc2 |
 | tf_migrate_alpha | 1.0.0-alpha20250227 |
 | tf_migrate_beta | 0.0.2-beta |
 | tfproviderdocs | 0.18.0 |
