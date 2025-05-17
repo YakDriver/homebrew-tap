@@ -13,5 +13,5 @@ terraform: 1.12.0
 tf_migrate_alpha: 1.0.0-alpha20250227
 tf_migrate_beta: 0.0.2-beta
 tfstacks: 0.6.1
-vault: 1.19.3
+vault: 1.19.4
 waypoint: 0.11.4
