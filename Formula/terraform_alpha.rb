@@ -6,31 +6,31 @@
 class TerraformAlpha < Formula
   desc 'Terraform Latest Alpha'
   homepage 'https://www.terraform.io/'
-  version '1.13.0-alpha20250521'
+  version '1.13.0-alpha20250604'
 
   if OS.mac? && Hardware::CPU.intel?
-    url 'https://releases.hashicorp.com/terraform/1.13.0-alpha20250521/terraform_1.13.0-alpha20250521_darwin_amd64.zip'
-    sha256 'a3532cd2740d411a55b403996eedf4ba461b22b6b7a186ac539a93cd64727d63'
+    url 'https://releases.hashicorp.com/terraform/1.13.0-alpha20250604/terraform_1.13.0-alpha20250604_darwin_amd64.zip'
+    sha256 '9b50e489b8cf9e89fe4781d5d2238d95a64df5ca94868d52b7d6852731891bfd'
   end
 
   if OS.mac? && Hardware::CPU.arm?
-    url 'https://releases.hashicorp.com/terraform/1.13.0-alpha20250521/terraform_1.13.0-alpha20250521_darwin_arm64.zip'
-    sha256 '9049dec219d0c4fef35903a05b64e7036f6a4314e68a453406ed77c28c149bd9'
+    url 'https://releases.hashicorp.com/terraform/1.13.0-alpha20250604/terraform_1.13.0-alpha20250604_darwin_arm64.zip'
+    sha256 '1eaba720713e4ce8d416aaa5911243983e55f5e3e494439b5f4fa246779d4b1b'
   end
 
   if OS.linux? && Hardware::CPU.intel?
-    url 'https://releases.hashicorp.com/terraform/1.13.0-alpha20250521/terraform_1.13.0-alpha20250521_linux_amd64.zip'
-    sha256 'e6f7304a2fe83edb48d41afa78ab21f3f2a12c405c5181087e8a5088667a3ba5'
+    url 'https://releases.hashicorp.com/terraform/1.13.0-alpha20250604/terraform_1.13.0-alpha20250604_linux_amd64.zip'
+    sha256 '88950402c7ec6378fd5272e3fa70bb1b3a2cfbb8e6ff1810c2fbab7cbe37c0cd'
   end
 
   if OS.linux? && Hardware::CPU.arm? && !Hardware::CPU.is_64_bit?
-    url 'https://releases.hashicorp.com/terraform/1.13.0-alpha20250521/terraform_1.13.0-alpha20250521_linux_arm.zip'
-    sha256 '42a71c1d8739663be4377f19c557def07f53a9dd79b1bbafcd03e97cc51bcc86'
+    url 'https://releases.hashicorp.com/terraform/1.13.0-alpha20250604/terraform_1.13.0-alpha20250604_linux_arm.zip'
+    sha256 '4ff1b86be048e5fd862d23ec077ed8fbd63fecdb3f4f75adf59bd5503ed67aad'
   end
 
   if OS.linux? && Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-    url 'https://releases.hashicorp.com/terraform/1.13.0-alpha20250521/terraform_1.13.0-alpha20250521_linux_arm64.zip'
-    sha256 'ccda4f78d408b180a8a82902511f7677310306bda2addcba9d6bc80033140c8b'
+    url 'https://releases.hashicorp.com/terraform/1.13.0-alpha20250604/terraform_1.13.0-alpha20250604_linux_arm64.zip'
+    sha256 'd41bc556be4111d7b3d039dcac1bc3362bf7a6b907897026e75ccb7a54d55f93'
   end
 
   conflicts_with 'terraform'
