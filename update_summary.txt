@@ -4,7 +4,7 @@ consul: 1.21.1
 nomad: 1.10.1
 packer_alpha: 1.12.0-alpha1
 packer_beta: 1.11.0-beta
-packer: 1.13.0
+packer: 1.13.1
 sentinel: 0.40.0
 terraform_alpha: 1.13.0-alpha20250604
 terraform_beta: 1.12.0-beta3
