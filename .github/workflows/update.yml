@@ -30,6 +30,10 @@ jobs:
         run: |
           ruby update.rb
 
+      - name: Run tfproviderdocs update script
+        run: |
+          ruby update_tfproviderdocs.rb
+
       - name: Read update summary
         id: read_summary
         run: |
