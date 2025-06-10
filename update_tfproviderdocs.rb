@@ -39,6 +39,7 @@ sha256s = {}
 platforms.each do |platform, regex|
   asset = assets.find { |a| a['name'] =~ regex }
   next unless asset
+
   url = asset['browser_download_url']
   urls[platform] = url
   sha256s[platform] = download_and_hash(url)
@@ -48,10 +49,11 @@ end
 formula = File.read(FORMULA_PATH)
 formula.gsub!(/version '\d+\.\d+\.\d+'/, "version '#{version}'")
 
-platforms.each do |platform, regex|
+platforms.each_key do |platform|
   url = urls[platform]
   sha = sha256s[platform]
   next unless url && sha
+
   url_regex = /url '.*#{platform}.*'\n\s*sha256 '[a-f0-9]{64}'/
   formula.gsub!(url_regex, "url '#{url}'\n      sha256 '#{sha}'")
 end
