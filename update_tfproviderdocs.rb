@@ -4,7 +4,6 @@ require 'net/http'
 require 'json'
 require 'digest'
 require 'uri'
-require 'open-uri'
 require 'tempfile'
 
 GITHUB_API_RELEASES = 'https://api.github.com/repos/YakDriver/tfproviderdocs/releases/latest'
@@ -15,9 +14,12 @@ SUMMARY_PATH = 'update_summary.txt'
 
 # Download a file and return its SHA256 hash
 def download_and_hash(url)
+  uri = URI(url)
   Tempfile.create do |file|
-    URI.open(url, 'rb') do |remote|
-      IO.copy_stream(remote, file)
+    Net::HTTP.start(uri.host, uri.port, use_ssl: uri.scheme == 'https') do |http|
+      http.request_get(uri.request_uri) do |resp|
+        resp.read_body { |chunk| file.write(chunk) }
+      end
     end
     file.rewind
     Digest::SHA256.hexdigest(file.read)
