@@ -27,9 +27,27 @@ def download_and_hash(url)
 end
 
 # Get the latest release info from GitHub
-resp = Net::HTTP.get(URI(GITHUB_API_RELEASES))
-release = JSON.parse(resp)
-version = release['tag_name'].gsub(/^v/, '')
+max_attempts = 3
+attempt = 0
+tag_name = nil
+release = nil
+while attempt < max_attempts && tag_name.nil?
+  resp = Net::HTTP.get(URI(GITHUB_API_RELEASES))
+  release = begin
+    JSON.parse(resp)
+  rescue StandardError
+    {}
+  end
+  tag_name = release['tag_name']
+  attempt += 1
+  sleep 2 if tag_name.nil? && attempt < max_attempts
+end
+if tag_name.nil?
+  puts "Error: No tag_name found in GitHub API response after #{max_attempts} attempts. Response was:"
+  puts release
+  exit 1
+end
+version = tag_name.gsub(/^v/, '')
 assets = release['assets']
 
 # Map platform to asset info
