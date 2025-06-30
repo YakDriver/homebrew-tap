@@ -43,7 +43,7 @@ while attempt < max_attempts && tag_name.nil?
   sleep 2 if tag_name.nil? && attempt < max_attempts
 end
 if tag_name.nil?
-  puts 'Error: No tag_name found in GitHub API response after multiple attempts. Response was:'
+  puts "Error: No tag_name found in GitHub API response after #{max_attempts} attempts. Response was:"
   puts release
   exit 1
 end
