@@ -33,7 +33,11 @@ tag_name = nil
 release = nil
 while attempt < max_attempts && tag_name.nil?
   resp = Net::HTTP.get(URI(GITHUB_API_RELEASES))
-  release = JSON.parse(resp) rescue {}
+  release = begin
+    JSON.parse(resp)
+  rescue StandardError
+    {}
+  end
   tag_name = release['tag_name']
   attempt += 1
   sleep 2 if tag_name.nil? && attempt < max_attempts
