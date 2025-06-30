@@ -27,11 +27,19 @@ def download_and_hash(url)
 end
 
 # Get the latest release info from GitHub
-resp = Net::HTTP.get(URI(GITHUB_API_RELEASES))
-release = JSON.parse(resp)
-tag_name = release['tag_name']
+max_attempts = 3
+attempt = 0
+tag_name = nil
+release = nil
+while attempt < max_attempts && tag_name.nil?
+  resp = Net::HTTP.get(URI(GITHUB_API_RELEASES))
+  release = JSON.parse(resp) rescue {}
+  tag_name = release['tag_name']
+  attempt += 1
+  sleep 2 if tag_name.nil? && attempt < max_attempts
+end
 if tag_name.nil?
-  puts 'Error: No tag_name found in GitHub API response. Response was:'
+  puts 'Error: No tag_name found in GitHub API response after multiple attempts. Response was:'
   puts release
   exit 1
 end
