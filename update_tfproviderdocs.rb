@@ -31,7 +31,7 @@ resp = Net::HTTP.get(URI(GITHUB_API_RELEASES))
 release = JSON.parse(resp)
 tag_name = release['tag_name']
 if tag_name.nil?
-  puts "Error: No tag_name found in GitHub API response. Response was:"
+  puts 'Error: No tag_name found in GitHub API response. Response was:'
   puts release
   exit 1
 end
