@@ -29,7 +29,13 @@ end
 # Get the latest release info from GitHub
 resp = Net::HTTP.get(URI(GITHUB_API_RELEASES))
 release = JSON.parse(resp)
-version = release['tag_name'].gsub(/^v/, '')
+tag_name = release['tag_name']
+if tag_name.nil?
+  puts "Error: No tag_name found in GitHub API response. Response was:"
+  puts release
+  exit 1
+end
+version = tag_name.gsub(/^v/, '')
 assets = release['assets']
 
 # Map platform to asset info
