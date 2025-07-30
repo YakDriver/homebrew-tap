@@ -4,10 +4,10 @@ consul: 1.21.3
 nomad: 1.10.3
 packer_alpha: 1.12.0-alpha1
 packer_beta: 1.11.0-beta
-packer: 1.13.1
+packer: 1.14.0
 sentinel: 0.40.0
 terraform_alpha: 1.14.0-alpha20250724
-terraform_beta: 1.13.0-beta2
+terraform_beta: 1.13.0-beta3
 terraform_rc: 1.12.0-rc2
 terraform: 1.12.2
 tf_migrate_alpha: 1.0.0-alpha20250227
