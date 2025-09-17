@@ -5,13 +5,13 @@
 class Tfproviderdocs < Formula
   desc 'Terraform Provider Documentation Tool'
   homepage 'https://github.com/YakDriver/tfproviderdocs'
-  version '0.23.1'
+  version '0.23.3'
 
   depends_on 'go'
 
   on_macos do
     if Hardware::CPU.intel?
-      url 'https://github.com/YakDriver/tfproviderdocs/releases/download/v0.22.0/tfproviderdocs_0.22.0_darwin_amd64.tar.gz'
+      url 'https://github.com/YakDriver/tfproviderdocs/releases/download/v0.23.3/tfproviderdocs_0.23.3_darwin_amd64.tar.gz'
       sha256 'e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855'
 
       def install
@@ -19,7 +19,7 @@ class Tfproviderdocs < Formula
       end
     end
     if Hardware::CPU.arm?
-      url 'https://github.com/YakDriver/tfproviderdocs/releases/download/v0.22.0/tfproviderdocs_0.22.0_darwin_arm64.tar.gz'
+      url 'https://github.com/YakDriver/tfproviderdocs/releases/download/v0.23.3/tfproviderdocs_0.23.3_darwin_arm64.tar.gz'
       sha256 'e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855'
 
       def install
@@ -30,14 +30,14 @@ class Tfproviderdocs < Formula
 
   on_linux do
     if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
-      url 'https://github.com/YakDriver/tfproviderdocs/releases/download/v0.22.0/tfproviderdocs_0.22.0_linux_amd64.tar.gz'
+      url 'https://github.com/YakDriver/tfproviderdocs/releases/download/v0.23.3/tfproviderdocs_0.23.3_linux_amd64.tar.gz'
       sha256 'e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855'
       def install
         bin.install 'tfproviderdocs'
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url 'https://github.com/YakDriver/tfproviderdocs/releases/download/v0.22.0/tfproviderdocs_0.22.0_linux_arm64.tar.gz'
+      url 'https://github.com/YakDriver/tfproviderdocs/releases/download/v0.23.3/tfproviderdocs_0.23.3_linux_arm64.tar.gz'
       sha256 'e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855'
       def install
         bin.install 'tfproviderdocs'
