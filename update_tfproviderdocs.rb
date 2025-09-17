@@ -12,17 +12,32 @@ FORMULA_PATH = 'Formula/tfproviderdocs.rb'
 README_PATH = 'README.md'
 SUMMARY_PATH = 'update_summary.txt'
 
-# Download a file and return its SHA256 hash
-def download_and_hash(url)
+# Download a file with redirect support and return its SHA256 hash
+def download_and_hash(url, max_redirects = 10)
+  content = download_with_redirects(url, max_redirects)
+  Digest::SHA256.hexdigest(content)
+end
+
+# Download content following redirects
+def download_with_redirects(url, max_redirects = 10)
   uri = URI(url)
-  Tempfile.create do |file|
-    Net::HTTP.start(uri.host, uri.port, use_ssl: uri.scheme == 'https') do |http|
-      http.request_get(uri.request_uri) do |resp|
-        resp.read_body { |chunk| file.write(chunk) }
+  
+  Net::HTTP.start(uri.host, uri.port, use_ssl: uri.scheme == 'https') do |http|
+    response = http.request_get(uri.request_uri)
+    
+    case response
+    when Net::HTTPRedirection
+      if max_redirects > 0
+        new_url = response['Location']
+        return download_with_redirects(new_url, max_redirects - 1)
+      else
+        raise 'Too many redirects'
       end
+    when Net::HTTPSuccess
+      return response.body
+    else
+      raise "HTTP Error: #{response.code} #{response.message}"
     end
-    file.rewind
-    Digest::SHA256.hexdigest(file.read)
   end
 end
 
