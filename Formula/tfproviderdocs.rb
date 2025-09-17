@@ -12,7 +12,7 @@ class Tfproviderdocs < Formula
   on_macos do
     if Hardware::CPU.intel?
       url 'https://github.com/YakDriver/tfproviderdocs/releases/download/v0.23.3/tfproviderdocs_0.23.3_darwin_amd64.tar.gz'
-      sha256 'e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855'
+      sha256 '4417635ac927f1fe553f2627ae8134b93dc84afac6aa2e4e4dc725cb830e9e6a'
 
       def install
         bin.install 'tfproviderdocs'
@@ -20,7 +20,7 @@ class Tfproviderdocs < Formula
     end
     if Hardware::CPU.arm?
       url 'https://github.com/YakDriver/tfproviderdocs/releases/download/v0.23.3/tfproviderdocs_0.23.3_darwin_arm64.tar.gz'
-      sha256 'e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855'
+      sha256 '309ada116c3bb6091881c56936dbf68cbcc33c2396bbdf8279c6867f37e5288a'
 
       def install
         bin.install 'tfproviderdocs'
@@ -31,14 +31,14 @@ class Tfproviderdocs < Formula
   on_linux do
     if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
       url 'https://github.com/YakDriver/tfproviderdocs/releases/download/v0.23.3/tfproviderdocs_0.23.3_linux_amd64.tar.gz'
-      sha256 'e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855'
+      sha256 '18d732290219b5373c005162ef2b6480b042b084c8234482426b9cc1c71eb52d'
       def install
         bin.install 'tfproviderdocs'
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
       url 'https://github.com/YakDriver/tfproviderdocs/releases/download/v0.23.3/tfproviderdocs_0.23.3_linux_arm64.tar.gz'
-      sha256 'e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855'
+      sha256 '5416842dc8768b65e5bae4c9f16c3ed3e8a4b25541c56a8fe88a77eda958d069'
       def install
         bin.install 'tfproviderdocs'
       end
