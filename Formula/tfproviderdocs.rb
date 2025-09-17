@@ -5,7 +5,7 @@
 class Tfproviderdocs < Formula
   desc 'Terraform Provider Documentation Tool'
   homepage 'https://github.com/YakDriver/tfproviderdocs'
-  version '0.22.0'
+  version '0.23.1'
 
   depends_on 'go'
 
