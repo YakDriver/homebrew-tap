@@ -21,20 +21,15 @@ end
 # Download content following redirects
 def download_with_redirects(url, max_redirects = 10)
   uri = URI(url)
-  
   Net::HTTP.start(uri.host, uri.port, use_ssl: uri.scheme == 'https') do |http|
     response = http.request_get(uri.request_uri)
-    
     case response
     when Net::HTTPRedirection
-      if max_redirects > 0
-        new_url = response['Location']
-        return download_with_redirects(new_url, max_redirects - 1)
-      else
-        raise 'Too many redirects'
-      end
+      raise 'Too many redirects' unless max_redirects.positive?
+
+      download_with_redirects(response['Location'], max_redirects - 1)
     when Net::HTTPSuccess
-      return response.body
+      response.body
     else
       raise "HTTP Error: #{response.code} #{response.message}"
     end
