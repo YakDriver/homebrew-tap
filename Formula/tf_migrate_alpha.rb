@@ -6,31 +6,31 @@
 class TfMigrateAlpha < Formula
   desc 'Terraform Migrate Alpha'
   homepage 'https://www.terraform.io/'
-  version '1.3.0-alpha20250917'
+  version '1.3.0-alpha20250919'
 
   if OS.mac? && Hardware::CPU.intel?
-    url 'https://releases.hashicorp.com/tf-migrate/1.3.0-alpha20250917/tf-migrate_1.3.0-alpha20250917_darwin_amd64.zip'
-    sha256 '41ad67252967f1353288f654c84a29c2ad535b5e65cf0e393a710f42428b324e'
+    url 'https://releases.hashicorp.com/tf-migrate/1.3.0-alpha20250919/tf-migrate_1.3.0-alpha20250919_darwin_amd64.zip'
+    sha256 '4ac9465628db4d12c943f24f50c4d05f5ca07e21cfbaecb6c8a6376a41c80213'
   end
 
   if OS.mac? && Hardware::CPU.arm?
-    url 'https://releases.hashicorp.com/tf-migrate/1.3.0-alpha20250917/tf-migrate_1.3.0-alpha20250917_darwin_arm64.zip'
-    sha256 '94f41a1c089cb2566038ffd654365866db239d225434f76e15ddca5518fb5cad'
+    url 'https://releases.hashicorp.com/tf-migrate/1.3.0-alpha20250919/tf-migrate_1.3.0-alpha20250919_darwin_arm64.zip'
+    sha256 '5658c3119ba1508980fd5ba582015cd29c1a084d74291ba05a7b28264e824a43'
   end
 
   if OS.linux? && Hardware::CPU.intel?
-    url 'https://releases.hashicorp.com/tf-migrate/1.3.0-alpha20250917/tf-migrate_1.3.0-alpha20250917_linux_amd64.zip'
-    sha256 'd355568f1914ee1eb523077f5ade2684c618432a839df7c3c1622931bc79842c'
+    url 'https://releases.hashicorp.com/tf-migrate/1.3.0-alpha20250919/tf-migrate_1.3.0-alpha20250919_linux_amd64.zip'
+    sha256 '798e9c8407c81adfdab16872c5d21abea548e6419e33a95400a5cefc9d463e27'
   end
 
   if OS.linux? && Hardware::CPU.arm? && !Hardware::CPU.is_64_bit?
-    url 'https://releases.hashicorp.com/tf-migrate/1.3.0-alpha20250917/tf-migrate_1.3.0-alpha20250917_linux_arm.zip'
-    sha256 '8bc23f9248e044869f9c4b46d8f4fa2e901c651f7e288e59a587e16db5a3f077'
+    url 'https://releases.hashicorp.com/tf-migrate/1.3.0-alpha20250919/tf-migrate_1.3.0-alpha20250919_linux_arm.zip'
+    sha256 '399070d6ed6014fe60f3d1e6aea3e86864e0d7c44ad82d36557661a20862f430'
   end
 
   if OS.linux? && Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-    url 'https://releases.hashicorp.com/tf-migrate/1.3.0-alpha20250917/tf-migrate_1.3.0-alpha20250917_linux_arm64.zip'
-    sha256 'b820b875e5a9caf905c69a98cf0aca4bba54210e19c57ce30b9a503b89bc1222'
+    url 'https://releases.hashicorp.com/tf-migrate/1.3.0-alpha20250919/tf-migrate_1.3.0-alpha20250919_linux_arm64.zip'
+    sha256 '3b5f8fc9ecefec72ffad5bb293c687185f0c8a53db6804e3ade773ac5398d85f'
   end
 
   conflicts_with 'tf-migrate'
