@@ -39,7 +39,7 @@ brew install YakDriver/tap/waypoint
 
 | Tap | Version |
 | --- | --- |
-| boundary | 0.20.0 |
+| boundary | 0.20.1 |
 | consul | 1.22.0 |
 | consul_aws | 0.1.3 |
 | nomad | 1.10.5 |
