@@ -8,6 +8,10 @@ An external tap is a custom repository for Homebrew formulae. By using an extern
 
 This tap, `YakDriver/homebrew-tap`, provides a collection of formulae for various HashiCorp tools and other utilities. It is updated daily to ensure you have access to the latest versions and improvements.
 
+## ⚠️ Important Note on terraform_latest
+
+The `terraform_latest` formula installs the absolute latest version of Terraform available, which may be an alpha, beta, rc, or stable release. This formula is for users who want cutting-edge features and accept the risk of potential breaking changes or instability. For production use, consider using the specific `terraform`, `terraform_rc`, `terraform_beta`, or `terraform_alpha` formulae instead.
+
 ## Installation
 
 To use this tap, you need to add it to your Homebrew configuration. You can then install the available formulae using the `brew install` command. For example:
@@ -26,6 +30,7 @@ brew install YakDriver/tap/sentinel
 brew install YakDriver/tap/terraform
 brew install YakDriver/tap/terraform_alpha
 brew install YakDriver/tap/terraform_beta
+brew install YakDriver/tap/terraform_latest
 brew install YakDriver/tap/terraform_rc
 brew install YakDriver/tap/tf_migrate_alpha
 brew install YakDriver/tap/tf_migrate_beta
@@ -47,12 +52,13 @@ brew install YakDriver/tap/waypoint
 | packer_alpha | 1.12.0-alpha1 |
 | packer_beta | 1.11.0-beta |
 | sentinel | 0.40.0 |
-| terraform | 1.13.4 |
+| terraform | 1.13.5 |
 | terraform_alpha | 1.14.0-alpha20250911 |
 | terraform_beta | 1.14.0-beta3 |
-| terraform_rc | 1.14.0-rc1 |
+| terraform_latest | 1.14.0-rc2 |
+| terraform_rc | 1.14.0-rc2 |
 | tf_migrate_alpha | 1.3.0-alpha20251003 |
-| tf_migrate_beta | 0.0.2-beta |
+| tf_migrate_beta | 2.0.0-beta1 |
 | tfproviderdocs | 0.23.3 |
 | tfstacks | 1.1.1 |
 | vault | 1.21.0 |
