@@ -2,8 +2,8 @@ GEM
   remote: https://rubygems.org/
   specs:
     ast (2.4.3)
-    bundler-audit (0.9.2)
-      bundler (>= 1.2.0, < 3)
+    bundler-audit (0.9.3)
+      bundler (>= 1.2.0)
       thor (~> 1.0)
     json (2.15.2)
     language_server-protocol (3.17.0.5)
