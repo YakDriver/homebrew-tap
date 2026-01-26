@@ -7,31 +7,31 @@
 class TerraformLatest < Formula
   desc 'Terraform Absolute Latest (may be alpha/beta/rc/stable)'
   homepage 'https://www.terraform.io/'
-  version '1.14.0-rc2'
+  version '1.15.0-alpha20251203'
 
   if OS.mac? && Hardware::CPU.intel?
-    url 'https://releases.hashicorp.com/terraform/1.14.0-rc2/terraform_1.14.0-rc2_darwin_amd64.zip'
-    sha256 '0835e756e92392888fc5e4a6c620b99997dc50be749fd389d717b4e87876ca48'
+    url 'https://releases.hashicorp.com/terraform/1.15.0-alpha20251203/terraform_1.15.0-alpha20251203_darwin_amd64.zip'
+    sha256 'd890d8ce6a5b91f3c0ac6d7b64df79ad9eb568e6c6e8b9781152874295de9642'
   end
 
   if OS.mac? && Hardware::CPU.arm?
-    url 'https://releases.hashicorp.com/terraform/1.14.0-rc2/terraform_1.14.0-rc2_darwin_arm64.zip'
-    sha256 '9390bbbcaae7cd8b64ec20db49c672926f8622d2f158b0e06f121207f384c8c3'
+    url 'https://releases.hashicorp.com/terraform/1.15.0-alpha20251203/terraform_1.15.0-alpha20251203_darwin_arm64.zip'
+    sha256 'dec9d663ca4395e3993cdf73e571df1f4f1899348988bef8d20042ab62841b78'
   end
 
   if OS.linux? && Hardware::CPU.intel?
-    url 'https://releases.hashicorp.com/terraform/1.14.0-rc2/terraform_1.14.0-rc2_linux_amd64.zip'
-    sha256 'a3d896dd2aa998916f44afb5d8f3792036e19fd93360ebedea3b9b1f5b10d507'
+    url 'https://releases.hashicorp.com/terraform/1.15.0-alpha20251203/terraform_1.15.0-alpha20251203_linux_amd64.zip'
+    sha256 '3bb61846ba8ffa4c19c13fa1a12c15f57ec2697d540f4a36caafe6210e60b650'
   end
 
   if OS.linux? && Hardware::CPU.arm? && !Hardware::CPU.is_64_bit?
-    url 'https://releases.hashicorp.com/terraform/1.14.0-rc2/terraform_1.14.0-rc2_linux_arm.zip'
-    sha256 '2f065c7bec9cdf3f73502913533bb95f09ab6eb32e0460f515f74a216309e7c3'
+    url 'https://releases.hashicorp.com/terraform/1.15.0-alpha20251203/terraform_1.15.0-alpha20251203_linux_arm.zip'
+    sha256 '499486077518ff1b61de587d4c06f7db6e2aea29e4f459540ac40f7faec36491'
   end
 
   if OS.linux? && Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-    url 'https://releases.hashicorp.com/terraform/1.14.0-rc2/terraform_1.14.0-rc2_linux_arm64.zip'
-    sha256 'd866a40f7416edfb0f2c819aaac3e697d63f68f5eb58f6636b202253bb283754'
+    url 'https://releases.hashicorp.com/terraform/1.15.0-alpha20251203/terraform_1.15.0-alpha20251203_linux_arm64.zip'
+    sha256 'bb525ff69cf59d3ffacf2cb972a6daf843e2e9619e2713f50abd3bb92dfce9a3'
   end
 
   conflicts_with 'terraform'
