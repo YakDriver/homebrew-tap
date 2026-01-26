@@ -5,22 +5,22 @@
 class Tfproviderdocs < Formula
   desc 'Terraform Provider Documentation Tool'
   homepage 'https://github.com/YakDriver/tfproviderdocs'
-  version '0.23.3'
+  version '0.24.1'
 
   depends_on 'go'
 
   on_macos do
     if Hardware::CPU.intel?
-      url 'https://github.com/YakDriver/tfproviderdocs/releases/download/v0.23.3/tfproviderdocs_0.23.3_darwin_amd64.tar.gz'
-      sha256 '4417635ac927f1fe553f2627ae8134b93dc84afac6aa2e4e4dc725cb830e9e6a'
+      url 'https://github.com/YakDriver/tfproviderdocs/releases/download/v0.24.1/tfproviderdocs_0.24.1_darwin_amd64.tar.gz'
+      sha256 '40a2adeca2bfd405dbd25f6747d66cd8521c074c99ac82f00abbb7d1f26b5ea1'
 
       def install
         bin.install 'tfproviderdocs'
       end
     end
     if Hardware::CPU.arm?
-      url 'https://github.com/YakDriver/tfproviderdocs/releases/download/v0.23.3/tfproviderdocs_0.23.3_darwin_arm64.tar.gz'
-      sha256 '309ada116c3bb6091881c56936dbf68cbcc33c2396bbdf8279c6867f37e5288a'
+      url 'https://github.com/YakDriver/tfproviderdocs/releases/download/v0.24.1/tfproviderdocs_0.24.1_darwin_arm64.tar.gz'
+      sha256 '15ba5d3d41f459bbf8d2007b9c3ce7158ebbaeb0ac7f7e9c9fcd3797f09b0d09'
 
       def install
         bin.install 'tfproviderdocs'
@@ -30,15 +30,15 @@ class Tfproviderdocs < Formula
 
   on_linux do
     if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
-      url 'https://github.com/YakDriver/tfproviderdocs/releases/download/v0.23.3/tfproviderdocs_0.23.3_linux_amd64.tar.gz'
-      sha256 '18d732290219b5373c005162ef2b6480b042b084c8234482426b9cc1c71eb52d'
+      url 'https://github.com/YakDriver/tfproviderdocs/releases/download/v0.24.1/tfproviderdocs_0.24.1_linux_amd64.tar.gz'
+      sha256 '9887d4e969481bd8ca39583f0da7296e134a0b63f393864abae004034a36606e'
       def install
         bin.install 'tfproviderdocs'
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url 'https://github.com/YakDriver/tfproviderdocs/releases/download/v0.23.3/tfproviderdocs_0.23.3_linux_arm64.tar.gz'
-      sha256 '5416842dc8768b65e5bae4c9f16c3ed3e8a4b25541c56a8fe88a77eda958d069'
+      url 'https://github.com/YakDriver/tfproviderdocs/releases/download/v0.24.1/tfproviderdocs_0.24.1_linux_arm64.tar.gz'
+      sha256 '4a91467f9444cc2e4913af628429ee52b249f761742225c62bdc0ce141df9226'
       def install
         bin.install 'tfproviderdocs'
       end
