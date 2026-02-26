@@ -26,8 +26,7 @@ jobs:
         run: bundle install
 
       - name: RuboCop check
-        run: |
-          rubocop
+        run: bundle exec rubocop
 
       - name: Run Bundler Audit
         run: |
