@@ -33,8 +33,7 @@ jobs:
           bundle exec bundler-audit check --update
 
       - name: Run update script
-        run: |
-          ruby update.rb
+        run: bundle exec ruby update.rb
 
       - name: Read update summary
         id: read_summary
