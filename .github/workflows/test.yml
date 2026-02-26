@@ -19,26 +19,21 @@ jobs:
       - name: Set up Ruby
         uses: ruby/setup-ruby@v1
         with:
-          ruby-version: '3.1'
+          ruby-version: '3.3'
+          bundler-cache: true
 
       - name: Install dependencies
-        run: |
-          gem install nokogiri
-          gem install rubocop
-          gem install bundler-audit
-          bundle install
+        run: bundle install
 
       - name: RuboCop check
-        run: |
-          rubocop
+        run: bundle exec rubocop
 
       - name: Run Bundler Audit
         run: |
           bundle exec bundler-audit check --update
 
       - name: Run update script
-        run: |
-          ruby update.rb
+        run: bundle exec ruby update.rb
 
       - name: Read update summary
         id: read_summary
