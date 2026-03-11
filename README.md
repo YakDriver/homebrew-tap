@@ -47,12 +47,12 @@ brew install YakDriver/tap/waypoint
 | boundary | 0.21.1 |
 | consul | 1.22.5 |
 | consul_aws | 0.1.3 |
-| nomad | 1.11.2 |
+| nomad | 1.11.3 |
 | packer | 1.15.0 |
 | packer_alpha | 1.12.0-alpha1 |
 | packer_beta | 1.11.0-beta |
 | sentinel | 0.40.0 |
-| terraform | 1.14.6 |
+| terraform | 1.14.7 |
 | terraform_alpha | 1.15.0-alpha20260304 |
 | terraform_beta | 1.14.0-beta3 |
 | terraform_latest | 1.15.0-alpha20260304 |
