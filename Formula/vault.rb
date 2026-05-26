@@ -10,12 +10,12 @@ class Vault < Formula
 
   if OS.mac? && Hardware::CPU.intel?
     url 'https://releases.hashicorp.com/vault/2.0.1/vault_2.0.1_darwin_amd64.zip'
-    sha256 '7be836b8d3166dd0928a6b811bf72444c66a690b62965b0490889e676252feef'
+    sha256 '90701499aec36b49cee62a93327d1b2a9305a70a894d15007a7e1b0ed6f67cea'
   end
 
   if OS.mac? && Hardware::CPU.arm?
     url 'https://releases.hashicorp.com/vault/2.0.1/vault_2.0.1_darwin_arm64.zip'
-    sha256 '987a01c8b453a5c4c0c6cc57241aba192ec38a04b70ccf8773e3010e7fbeec67'
+    sha256 '98e9f8ea95d6094d2cac872794ca5da5abb8ff67dce79f27a5f6eb1fc216f282'
   end
 
   if OS.linux? && Hardware::CPU.intel?
@@ -25,7 +25,7 @@ class Vault < Formula
 
   if OS.linux? && Hardware::CPU.arm? && !Hardware::CPU.is_64_bit?
     url 'https://releases.hashicorp.com/vault/2.0.1/vault_2.0.1_linux_arm.zip'
-    sha256 'c082ebf67bd4195f4b16a7f87f53e760a555277d3c655a6ae55e84163cde6a6b'
+    sha256 '20cbf9233dcd0b920892ffdf9d14ec6a72bc3191889b0248c0329460a38b5a4a'
   end
 
   if OS.linux? && Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
