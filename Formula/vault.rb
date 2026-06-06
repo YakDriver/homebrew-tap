@@ -25,7 +25,7 @@ class Vault < Formula
 
   if OS.linux? && Hardware::CPU.arm? && !Hardware::CPU.is_64_bit?
     url 'https://releases.hashicorp.com/vault/2.0.2/vault_2.0.2_linux_arm.zip'
-    sha256 '23878b866f2665d607cee280451571231fdfeeb0aa1c2580dc46f671d484354a'
+    sha256 '3c604238630edf1dbc5acb80f18438d6692eb1c280f19c404fb7468eff7b6cc6'
   end
 
   if OS.linux? && Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
