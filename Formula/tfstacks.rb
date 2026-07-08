@@ -6,31 +6,31 @@
 class Tfstacks < Formula
   desc 'Terraform Stacks'
   homepage 'https://www.terraform.io/'
-  version '1.2.1'
+  version '1.3.0'
 
   if OS.mac? && Hardware::CPU.intel?
-    url 'https://releases.hashicorp.com/tfstacks/1.2.1/tfstacks_1.2.1_darwin_amd64.zip'
-    sha256 'c7526358e6904e9a1e59c92f1c3642732339f31fd41946d8f4ca5dcee7277b2d'
+    url 'https://releases.hashicorp.com/tfstacks/1.3.0/tfstacks_1.3.0_darwin_amd64.zip'
+    sha256 'e266e65f42685046f8311317d98b4108824932129e1401d895e9b0c0f45d6f25'
   end
 
   if OS.mac? && Hardware::CPU.arm?
-    url 'https://releases.hashicorp.com/tfstacks/1.2.1/tfstacks_1.2.1_darwin_arm64.zip'
-    sha256 '9ed2b7f74b15b676120c12c2277a3017f6e1c5522ebd7085a6c4b5c49b984edb'
+    url 'https://releases.hashicorp.com/tfstacks/1.3.0/tfstacks_1.3.0_darwin_arm64.zip'
+    sha256 '3953ae9ab8b81d27e46993d491824709d260fc506692186bab210eaf89a25375'
   end
 
   if OS.linux? && Hardware::CPU.intel?
-    url 'https://releases.hashicorp.com/tfstacks/1.2.1/tfstacks_1.2.1_linux_amd64.zip'
-    sha256 '0e5988f5d5749c30dc62e4819650bc1bb2dbb9d30dff17504e9b46fb8c6e50c1'
+    url 'https://releases.hashicorp.com/tfstacks/1.3.0/tfstacks_1.3.0_linux_amd64.zip'
+    sha256 '21d9dcbabce95e73a3a8d1a50503d4bf2304af7b8f094f0085cf317a2b2e0389'
   end
 
   if OS.linux? && Hardware::CPU.arm? && !Hardware::CPU.is_64_bit?
-    url 'https://releases.hashicorp.com/tfstacks/1.2.1/tfstacks_1.2.1_linux_arm.zip'
-    sha256 'a3cfc85018930c7ede98ae7c452fe24f1d84ae7d1d94a631e3783cf1a076568a'
+    url 'https://releases.hashicorp.com/tfstacks/1.3.0/tfstacks_1.3.0_linux_arm.zip'
+    sha256 'dc42331145ed63772ee7d37e662e0c00ad3bff8da77213f82f754a4ffd741fa6'
   end
 
   if OS.linux? && Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-    url 'https://releases.hashicorp.com/tfstacks/1.2.1/tfstacks_1.2.1_linux_arm64.zip'
-    sha256 '38b1bde23e69bfe2374986fb5f59708ff17de051a883f64628769bf4040e26d0'
+    url 'https://releases.hashicorp.com/tfstacks/1.3.0/tfstacks_1.3.0_linux_arm64.zip'
+    sha256 'c3727bff8f6d9ad481a9b0c62dc6044466076b7e72a260081bf17b67f93b94b1'
   end
 
   conflicts_with 'tfstacks'
