@@ -52,7 +52,7 @@ brew install YakDriver/tap/waypoint
 | packer_alpha | 1.12.0-alpha1 |
 | packer_beta | 1.11.0-beta |
 | sentinel | 0.41.0 |
-| terraform | 1.15.7 |
+| terraform | 1.15.8 |
 | terraform_alpha | 1.16.0-alpha20260708 |
 | terraform_beta | 1.15.0-beta2 |
 | terraform_latest | 1.16.0-alpha20260708 |
