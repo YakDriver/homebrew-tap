@@ -61,5 +61,5 @@ brew install YakDriver/tap/waypoint
 | tf_migrate_beta | 2.0.0-beta3 |
 | tfproviderdocs | 0.26.0 |
 | tfstacks | 1.3.0 |
-| vault | 2.0.3 |
+| vault | 2.0.4 |
 | waypoint | 0.11.4 |
