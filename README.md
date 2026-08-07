@@ -54,7 +54,7 @@ brew install YakDriver/tap/waypoint
 | sentinel | 0.41.0 |
 | terraform | 1.15.8 |
 | terraform_alpha | 1.17.0-alpha20260729 |
-| terraform_beta | 1.16.0-beta1 |
+| terraform_beta | 1.16.0-beta2 |
 | terraform_latest | 1.17.0-alpha20260729 |
 | terraform_rc | 1.15.0-rc4 |
 | tf_migrate_alpha | 1.3.0-alpha20251003 |
