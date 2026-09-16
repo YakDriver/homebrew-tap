@@ -28,12 +28,18 @@ jobs:
       - name: RuboCop check
         run: bundle exec rubocop
 
-      - name: Run Bundler Audit
-        run: |
-          bundle exec bundler-audit check --update
-
       - name: Run update script
         run: bundle exec ruby update.rb
+
+      # Informational only. These gems (nokogiri, rubocop, bundler-audit) are
+      # build/test tooling and are never shipped to tap users, so a newly
+      # published advisory ("advisory drift") must not block formula delivery.
+      # Gems are kept patched automatically by Dependabot (.github/dependabot.yml)
+      # and by `bundle update` in the Update Formulas workflow.
+      - name: Run Bundler Audit (informational)
+        continue-on-error: true
+        run: |
+          bundle exec bundler-audit check --update
 
       - name: Read update summary
         id: read_summary

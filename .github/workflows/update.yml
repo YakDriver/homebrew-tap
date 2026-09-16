@@ -20,19 +20,22 @@ jobs:
       - name: Set up Ruby
         uses: ruby/setup-ruby@v1
         with:
-          ruby-version: '3.1'
+          ruby-version: '3.3'
+          bundler-cache: true
 
-      - name: Install dependencies
-        run: |
-          gem install nokogiri
+      # Refresh Gemfile.lock to the latest allowed gem versions on every run so
+      # the generated PR always carries current, patched dependencies. This lets
+      # the daily PR self-heal advisory drift instead of shipping a stale lock.
+      - name: Update bundled gems
+        run: bundle update
 
       - name: Run update script
         run: |
-          ruby update.rb
+          bundle exec ruby update.rb
 
       - name: Run tfproviderdocs update script
         run: |
-          ruby update_tfproviderdocs.rb
+          bundle exec ruby update_tfproviderdocs.rb
 
       - name: Read update summary
         id: read_summary
